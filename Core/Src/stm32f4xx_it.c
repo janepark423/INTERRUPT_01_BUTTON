@@ -170,6 +170,8 @@ void EXTI0_IRQHandler(void)
   /* USER CODE BEGIN EXTI0_IRQn 0 */
 
   /* USER CODE END EXTI0_IRQn 0 */
+	HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+  /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(B1_Pin);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
 
@@ -210,9 +212,9 @@ void OTG_HS_IRQHandler(void)
 void LTDC_IRQHandler(void)
 {
   /* USER CODE BEGIN LTDC_IRQn 0 */
-
+HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
   /* USER CODE END LTDC_IRQn 0 */
-  HAL_LTDC_IRQHandler(&hltdc);
+  HAL_LTDC_IRQHandler(B1_Pin);
   /* USER CODE BEGIN LTDC_IRQn 1 */
 
   /* USER CODE END LTDC_IRQn 1 */
